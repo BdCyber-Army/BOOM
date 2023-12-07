@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO / Google -->
+    <meta name="author" content="Bd Army">
+    <meta name="description" content="Hey, look! This is me, BD Army.">
+    <title>Bd Army | Sms Boomber</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+
+    <!-- Remix Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/Css/Style1.css">
+</head>
+
+<body>
+
+    <!-- Header Profile -->
+    <header class="profile container">
+        <!-- Theme Button -->
+        <i class="ri-moon-line change-theme" id="theme-button"></i>
+
+        <div class="profile_container grid">
+            <div class="profile_data">
+                <div class="profile_border">
+                    <div class="my_profile">
+                        <img src="assets/images/profile_pic.png" alt="Profile Picture" style="width: auto">
+                    </div>
+                </div>
+                <h2 class="profile_name">Bd Army</h2>
+                <h3 class="profile_profession">A little Developer and Cyber Security Learner's</h3>
+
+                <ul class="profile_social">
+                    <a href="https://www.facebook.com/bdcyberarmy10/" target="_blank" class="profile_social_link">
+                        <i class="ri-facebook-line"></i>
+                    </a>
+                    <a href="https://t.me/bdcyberarmy10" target="_blank" class="profile_social_link">
+                        <i class="ri-telegram-line"></i>
+                    </a>
+                   <a href="mailto: bdcyberarmy10@gmail.com" class="profile_social_link">
+    <i class="ri-mail-line"></i>
+</a>
+                    <a href="https://github.com/BdCyber-Army/" target="_blank" class="profile_social_link">
+                        <i class="ri-github-line"></i>
+                    </a>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Add your additional sections or content here -->
+    
+    <!-- Add this section inside the <body> tag of your existing HTML -->
+<section class="sms-section container">
+      <link rel="stylesheet" href="assets/Css/Style2.css">
+    <h2>Send SMS</h2>
+    <form id="smsForm">
+        <label for="phoneNumber">Phone Number:</label>
+        <input type="text" id="phoneNumber" placeholder="+88" required>
+
+        <label for="smsAmount">SMS Amount:</label>
+        <input type="number" id="smsAmount" placeholder="Enter SMS amount" required>
+
+        <button type="button" onclick="sendSMS()">Send SMS</button>
+    </form>
+</section>
+
+<script>
+    function sendSMS() {
+        const phoneNumber = document.getElementById('phoneNumber').value;
+        const smsAmount = document.getElementById('smsAmount').value;
+
+        if (!phoneNumber || !smsAmount) {
+            alert('Please fill in all fields.');
+            return;
+        }
+
+        // Specify your PHP file for handling SMS logic
+        const sendSMSUrl = 'assets/Php/sendsms.php';
+
+        // Send SMS using fetch API
+        fetch(sendSMSUrl, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: new URLSearchParams({
+                phoneNumber: phoneNumber,
+                smsAmount: smsAmount
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data); // Log or handle the API responses as needed
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Failed to send SMS. Please check the console for details.');
+        });
+    }
+</script>
+    
+    
+    
+        <!-- Add this script inside the <body> tag -->
+<script>
+    const themeButton = document.getElementById('theme-button');
+    const body = document.body;
+
+    themeButton.addEventListener('click', () => {
+        body.classList.toggle('dark-theme');
+    });
+</script>
+    
+
+</body>
+
+  </html>
+                      
