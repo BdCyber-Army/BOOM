@@ -11,7 +11,7 @@
     <title>Bd Army | Sms Boomber</title>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
 
     <!-- Remix Icons -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
@@ -205,7 +205,7 @@
             <div class="profile_data">
                 <div class="profile_border">
                     <div class="my_profile">
-                        <img src="assets/images/profile_pic.png" alt="Profile Picture" style="width: auto">
+                        <img src="profile_pic.png" alt="Profile Picture" style="width: auto">
                     </div>
                 </div>
                 <h2 class="profile_name">Bd Army</h2>
@@ -289,6 +289,7 @@
     </form>
 </section>
 
+
 <script>
     function sendSMS() {
         const phoneNumber = document.getElementById('phoneNumber').value;
@@ -300,7 +301,7 @@
         }
 
         // Specify your PHP file for handling SMS logic
-        const sendSMSUrl = 'assets/Php/sendsms.php';
+        const sendSMSUrl = 'sendsms.php';
 
         // Send SMS using fetch API
         fetch(sendSMSUrl, {
@@ -339,5 +340,4 @@
 
 </body>
 
-  </html>
-                      
+    </html>
