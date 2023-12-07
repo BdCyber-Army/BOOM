@@ -1,0 +1,174 @@
+<style>
+        /* Variables CSS */
+        :root {
+            --hue: 228;
+            --sat: 50%;
+            --lig: 30%;
+            --first-color: hsl(var(--hue), var(--sat), var(--lig));
+            --first-color-alt: hsl(var(--hue), var(--sat), 20%);
+            --title-color: hsl(var(--hue), 12%, 15%);
+            --text-color: hsl(var(--hue), 12%, 45%);
+            --text-color-light: hsl(var(--hue), 8%, 75%);
+            --text-color-lighten: hsl(var(--hue), 8%, 92%);
+            --body-color: hsl(var(--hue), 100%, 99%);
+            --container-color: #fff;
+            --body-font: 'Poppins', sans-serif;
+            --h2-font-size: 1.25rem;
+            --h3-font-size: 1rem;
+            --normal-font-size: .938rem;
+            --small-font-size: .813rem;
+            --smaller-font-size: .75rem;
+        }
+
+        @media screen and (min-width: 968px) {
+            :root {
+                --h2-font-size: 1.5rem;
+                --h3-font-size: 1.25rem;
+                --normal-font-size: 1rem;
+                --small-font-size: .875rem;
+                --smaller-font-size: .813rem;
+            }
+        }
+
+        /* Base */
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            font-family: var(--body-font);
+            font-size: var(--normal-font-size);
+            background-color: var(--body-color);
+            color: var(--text-color);
+            transition: .3s;
+        }
+
+        h1, h2, h3 {
+            color: var(--title-color);
+            font-weight: 600;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Theme */
+        .change-theme {
+            position: absolute;
+            top: 1.5rem;
+            right: 0;
+            font: 1.25rem;
+            color: var(--title-color);
+            cursor: pointer;
+            transition: .3;
+        }
+
+        .change-theme:hover {
+            color: var(--first-color)
+        }
+
+        /* Variables Dark Theme */
+        body.dark-theme {
+            --title-color: hsl(var(--hue), 12%, 95%);
+            --text-color: hsl(var(--hue), 12%, 75%);
+            --body-color: hsl(var(--hue), 40%, 8%);
+            --container-color: hsl(var(--hue), 24%, 12%);
+        }
+
+        /* Reusable CSS Classes */
+        .container {
+            max-width: 968px;
+            margin-left: 1.5rem;
+            margin-right: 1.5rem;
+        }
+
+        .grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        /* Profile */
+        .profile {
+            position: relative;
+            padding-top: 3.5rem;
+        }
+
+        .profile_container {
+            row-gap: 2rem;
+        }
+
+        .profile_data {
+            display: grid;
+            text-align: center;
+        }
+
+        .my_profile {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(180deg,
+                hsla(var(--hue), var(--sat), var(--lig), 1) 0%,
+                hsla(var(--hue), var(--sat), var(--lig), .2) 100%);
+            border-radius: 50%;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+        }
+
+       
+        .my_profile img {
+            width: 75px;
+        }
+
+        .profile_border {
+            border: 3.5px solid var(--first-color);
+            justify-self: center;
+            width: 115px;
+            height: 115px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            margin-bottom: .75rem;
+        }
+
+        .profile_name {
+            font-size: var(--h2-font-size);
+        }
+
+        .profile_profession {
+            font-size: var(--smaller-font-size);
+            font-weight: 500;
+            color: var(--text-color);
+            margin-bottom: 1rem;
+        }
+
+        .profile_social {
+            display: flex;
+            justify-content: center;
+            column-gap: .75rem;
+        }
+
+        .profile_social_link {
+            font-size: 1.25rem;
+            color: var(--title-color);
+            transition: .3s;
+        }
+
+        .profile_social_link:hover {
+            color: var(--first-color);
+        }
+
+        /* Add your additional styles or customize further based on your needs */
+
+    </style>
